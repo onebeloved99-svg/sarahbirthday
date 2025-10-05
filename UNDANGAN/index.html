@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Undangan Ulang Tahun - Siti Sarah Sakinah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#fff5f7;--card:#ffffff;--accent:#f8c7d6;--muted:#777;--gold:#c79b4b}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#fff 0%, #fff5f7 100%);color:#222}
+    .container{max-width:980px;margin:24px auto;padding:20px}
+    .hero{background:radial-gradient(circle at 10% 10%, rgba(248,199,214,0.6), transparent 10%), linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.8));border-radius:18px;padding:36px;display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center;box-shadow:0 6px 30px rgba(18,18,18,0.06);position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:linear-gradient(135deg,#ffd6e6,#fff0f5);opacity:.35}
+    .title{font-family:'Playfair Display',serif;font-size:34px;margin:0 0 8px;color:#b0416f}
+    .subtitle{margin:0;color:var(--muted)}
+    .card{background:var(--card);border-radius:12px;padding:18px;margin-top:18px;box-shadow:0 6px 20px rgba(25,25,25,0.04)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .countdown{display:flex;gap:8px;align-items:center}
+    .countdown .unit{background:linear-gradient(180deg,#fff,#fff9);padding:12px;border-radius:10px;min-width:70px;text-align:center}
+    .unit .num{font-size:20px;font-weight:700}
+    .unit .label{font-size:12px;color:var(--muted)}
+    form{display:flex;flex-direction:column;gap:8px}
+    input,textarea,button{padding:10px;border-radius:8px;border:1px solid #eee;font-size:14px}
+    .row{display:flex;gap:8px}
+    .row .col{flex:1}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    .footer{text-align:center;margin-top:18px;color:var(--muted);font-size:14px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.gallery{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}
+    @media (max-width:480px){.gallery img{height:90px}.title{font-size:26px}}
+    .fade-in{animation:fadeIn .9s ease both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    .confetti-piece{position:absolute;width:8px;height:14px;opacity:.9;border-radius:2px;animation:fall 2.2s linear infinite}
+    @keyframes fall{0%{transform:translateY(-30vh) rotate(0)}100%{transform:translateY(120vh) rotate(720deg)}}
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+  </style>
+</head>
+<body>
+  <!-- Musik Latar -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="music/DayNigthMorning - Happy Birthday.mp3" type="audio/mpeg" />
+    Browser Anda tidak mendukung audio.
+  </audio>
+  <div class="container">
+    <div class="hero card fade-in" id="hero">
+      <div>
+        <h1 class="title">Siti Sarah Sakinah</h1>
+        <p class="subtitle">Undangan Ulang Tahun ke-21 — Sweet & Elegant</p>
+        <p class="muted" style="margin-top:10px">Sabtu, 26 Oktober 2025 • 19:00 WIB • Cafe Gardenia, Jl. Melati No. 12, Bandung</p>
+        <div class="card" style="margin-top:18px">
+          <div class="center"><strong>Hitung Mundur</strong></div>
+          <div class="countdown" id="countdown" style="margin-top:10px;justify-content:center">
+            <div class="unit"><div class="num" id="days">--</div><div class="label">Hari</div></div>
+            <div class="unit"><div class="num" id="hours">--</div><div class="label">Jam</div></div>
+            <div class="unit"><div class="num" id="minutes">--</div><div class="label">Menit</div></div>
+            <div class="unit"><div class="num" id="seconds">--</div><div class="label">Detik</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="center">
+        <img src="images/profile.jpg" alt="Siti Sarah" style="width:220px;height:220px;object-fit:cover;border-radius:20px;box-shadow:0 8px 30px rgba(180,60,100,0.12)">
+        <p class="muted" style="margin-top:8px">Datang dengan kegembiraan & doa</p>
+      </div>
+    </div>
+    <section class="grid" style="margin-top:18px">
+      <div class="card fade-in">
+        <h3>Detail Acara</h3>
+        <p><strong>Waktu:</strong> Sabtu, 26 Oktober 2025, 19:00 WIB</p>
+        <p><strong>Lokasi:</strong> Cafe Gardenia, Jl. Melati No. 12, Bandung</p>
+        <p><strong>Dresscode:</strong> Smart Casual (warna pastel disarankan)</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Cafe+Gardenia+Jl.+Melati+No.+12+Bandung" target="_blank" rel="noopener">Buka di Google Maps</a>
+      </div>
+      <div class="card fade-in">
+        <h3>Ucapan & Doa</h3>
+        <form id="rsvpForm">
+          <input type="text" id="name" placeholder="Nama kamu" required />
+          <div class="row">
+            <input class="col" type="email" id="email" placeholder="Email (opsional)" />
+            <input class="col" type="text" id="relation" placeholder="Relasi (teman/keluarga)" />
+          </div>
+          <textarea id="message" rows="3" placeholder="Tulis ucapan / doa untuk Siti Sarah..."></textarea>
+          <div style="display:flex;gap:8px">
+            <button type="submit">Kirim & Simpan</button>
+            <button type="button" id="sendEmail">Kirim via Email</button>
+          </div>
+        </form>
+        <div id="responses" style="margin-top:12px"></div>
+      </div>
+    </section>
+    <section class="card fade-in" style="margin-top:18px">
+      <h3>Galeri Foto</h3>
+      <p class="muted">Ganti gambar di folder <code>/images/</code> untuk menampilkan foto nyata.</p>
+      <div class="gallery" id="gallery">
+        <img src="images/photo1.jpg" alt="foto1">
+        <img src="images/photo2.jpg" alt="foto2">
+        <img src="images/photo3.jpg" alt="foto3">
+        <img src="images/photo4.jpg" alt="foto4">
+        <img src="images/photo5.jpg" alt="foto5">
+        <img src="images/photo6.jpg" alt="foto6">
+      </div>
+    </section>
+    <section class="card fade-in" style="margin-top:18px">
+      <h3>Pesan Penting</h3>
+      <p class="muted">Mohon konfirmasi kehadiran melalui form di atas. Parkir tersedia di sisi utara cafe. Terima kasih atas doa dan kehadirannya.</p>
+    </section>
+    <div class="footer">© 2025 Undangan Ulang Tahun - Siti Sarah Sakinah</div>
+  </div>
+  <script>
+    const bgMusic=document.getElementById('bgMusic');
+    document.body.addEventListener('click',()=>{if(bgMusic.paused)bgMusic.play();},{once:true});
+    const target=new Date('2025-10-26T12:00:00Z');
+    function updateCountdown(){const now=new Date();let diff=Math.max(0,target-now);const d=Math.floor(diff/86400000);diff-=d*86400000;const h=Math.floor(diff/3600000);diff-=h*3600000;const m=Math.floor(diff/60000);diff-=m*60000;const s=Math.floor(diff/1000);days.textContent=d;hours.textContent=String(h).padStart(2,'0');minutes.textContent=String(m).padStart(2,'0');seconds.textContent=String(s).padStart(2,'0')}updateCountdown();setInterval(updateCountdown,1000);
+  </script>
+</body>
+</html>

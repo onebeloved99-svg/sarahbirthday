@@ -1,0 +1,71 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff9fb;
+  color: #4a2c2a;
+  text-align: center;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.7s forwards;
+}
+
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes fadeOut { to { opacity: 0; } }
+
+.title {
+  font-size: 2rem;
+  margin-top: 80px;
+  color: #b93160;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: #8a3f56;
+  margin-bottom: 0.5rem;
+}
+.details { color: #555; margin-bottom: 2rem; }
+
+.btn {
+  background: #f9a1bc;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn:hover { background: #e76a92; }
+
+.countdown-box {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: inline-block;
+  display: flex;
+  flex-direction: column; /* Menyusun isi secara vertikal */
+  align-items: center;    /* Tengah horizontal */
+  justify-content: center;
+  min-height: 10vh;      /* Tengah secara vertikal di layar */
+  gap: 20px;              /* Jarak antar elemen */
+}
+#countdown span { font-weight: bold; color: #b93160; margin: 0 5px; }
+
+.name {
+  font-size: 2rem;
+  color: #b93160;
+}
+.main-container {
+  margin-top: 80px;
+  padding: 20px;
+}
+.event-details p { margin: 5px 0; }
+.thanks { margin-top: 30px; font-style: italic; }
